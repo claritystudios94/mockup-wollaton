@@ -1,0 +1,724 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wollaton Road Dental Practice — Nottingham NG8</title>
+  <meta name="description" content="Family-run private dental practice in Wollaton, Nottingham. Led by Dr Gurvinder Singh Thiara. Microscope enhanced dentistry. New patients welcome.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --forest:  #265044;
+      --forest2: #1A3830;
+      --fmid:    #357365;
+      --fglow:   rgba(38,80,68,0.22);
+      --cream:   #F8F6F1;
+      --warm:    #F0EAE0;
+      --warm2:   #E6DDD0;
+      --stone:   #8B7355;
+      --gold:    #B8832A;
+      --gold-lt: rgba(184,131,42,0.12);
+      --ink:     #1A1A18;
+      --mid:     #6B6B60;
+      --border:  rgba(26,26,24,0.10);
+      --card:    rgba(255,255,255,0.75);
+      --shadow:  rgba(38,80,68,0.12);
+    }
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--ink);overflow-x:hidden}
+
+    .sprog{position:fixed;top:0;left:0;height:2px;background:linear-gradient(90deg,var(--forest),var(--fmid));z-index:700;transform-origin:left;transform:scaleX(0);box-shadow:0 0 6px var(--fglow)}
+
+    /* TOP BAR */
+    .top-bar{background:var(--forest2);color:rgba(255,255,255,.55);padding:.5rem 6%;display:flex;align-items:center;justify-content:space-between;font-size:.77rem;flex-wrap:wrap;gap:.4rem}
+    .top-bar-left{display:flex;gap:1.5rem;align-items:center;flex-wrap:wrap}
+    .top-bar-item{display:flex;align-items:center;gap:.45rem;white-space:nowrap}
+    .top-bar-item a{color:rgba(255,255,255,.55);text-decoration:none;transition:color .2s}
+    .top-bar-item a:hover{color:white}
+    .top-bar-div{width:1px;height:11px;background:rgba(255,255,255,.12);flex-shrink:0}
+
+    /* NAV */
+    nav{position:fixed;top:0;left:0;right:0;z-index:500;padding:0 5%;height:80px;display:flex;align-items:center;justify-content:space-between;gap:1rem;background:rgba(248,246,241,.98);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);transition:box-shadow .4s}
+    nav.stuck{box-shadow:0 4px 24px rgba(38,80,68,.08)}
+    .nav-logo{text-decoration:none;display:flex;flex-direction:column;flex-shrink:0}
+    .nav-logo-name{font-family:'DM Serif Display',serif;font-size:1.1rem;color:var(--ink);line-height:1.15}
+    .nav-logo-sub{font-size:.6rem;color:var(--mid);letter-spacing:.05em}
+    nav ul{list-style:none;display:flex;gap:1.6rem;align-items:center}
+    nav ul a{text-decoration:none;font-size:.78rem;font-weight:500;letter-spacing:.05em;text-transform:uppercase;color:var(--mid);transition:color .2s;position:relative;white-space:nowrap}
+    nav ul a::after{content:'';position:absolute;bottom:-4px;left:0;width:0;height:1px;background:#B8832A;transition:width .3s}
+    nav ul a:hover{color:var(--ink)}
+    nav ul a:hover::after{width:100%}
+    .nav-book{background:var(--forest)!important;color:white!important;padding:.45rem 1.1rem;border-radius:100px;font-weight:600!important;font-size:.75rem!important;white-space:nowrap;transition:transform .2s,box-shadow .2s!important}
+    .nav-book::after{display:none!important}
+    .nav-book:hover{transform:translateY(-2px)!important;box-shadow:0 0 0 8px var(--fglow)!important}
+
+    /* HERO */
+    .hero{min-height:100vh;display:grid;grid-template-columns:1fr 1fr;position:relative;overflow:hidden;padding-top:80px}
+    .hero-bg{position:absolute;inset:0;z-index:0}
+    .hero-bg::before{content:'';position:absolute;inset:0;background:linear-gradient(155deg,#1A3830 0%,#0E2018 100%)}
+    .orb{position:absolute;border-radius:50%;filter:blur(90px);pointer-events:none;animation:orbf 18s ease-in-out infinite}
+    .orb1{width:480px;height:480px;background:radial-gradient(circle,var(--forest) 0%,transparent 70%);top:-100px;right:-80px;opacity:.25;animation-duration:22s}
+    .orb2{width:300px;height:300px;background:radial-gradient(circle,#8B7355 0%,transparent 70%);bottom:-60px;left:8%;opacity:.12;animation-duration:28s;animation-delay:-9s}
+    @keyframes orbf{0%,100%{transform:translate(0,0) scale(1)}33%{transform:translate(22px,-16px) scale(1.04)}66%{transform:translate(-16px,22px) scale(.97)}}
+    .hero-grid-ol{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.03) 1px,transparent 1px);background-size:55px 55px;mask-image:radial-gradient(ellipse 70% 60% at 50% 50%,black 0%,transparent 70%)}
+
+    .hero-left{position:relative;z-index:2;display:flex;flex-direction:column;justify-content:center;padding:80px 8% 80px 10%}
+    .hero-ey{display:inline-flex;align-items:center;gap:.6rem;font-size:.7rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.45);margin-bottom:.8rem;opacity:0;animation:rUp .8s ease forwards .1s}
+    .hero-ey-line{width:22px;height:1px;background:var(--fmid)}
+    .hero-practice-name{font-family:'DM Serif Display',serif;font-size:clamp(.95rem,1.6vw,1.3rem);letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.38);margin-bottom:.9rem;opacity:0;animation:rUp .8s ease forwards .2s}
+    .hero h1{font-family:'DM Serif Display',serif;font-size:clamp(2.8rem,4.5vw,4.5rem);font-weight:400;line-height:1.1;color:white;margin-bottom:1.8rem;opacity:0;animation:rUp .8s ease forwards .3s}
+    .hero h1 em{font-style:italic;color:rgba(255,255,255,.55)}
+    .hero-sub{font-size:1rem;font-weight:300;color:rgba(255,255,255,.58);line-height:1.85;max-width:420px;margin-bottom:2.5rem;opacity:0;animation:rUp .8s ease forwards .44s}
+    .hero-btns{display:flex;gap:1rem;flex-wrap:wrap;margin-bottom:2.8rem;opacity:0;animation:rUp .8s ease forwards .58s}
+
+    .btn-mag{position:relative;display:inline-flex;align-items:center;gap:.5rem;border-radius:100px;text-decoration:none;font-family:'DM Sans',sans-serif;font-weight:600;font-size:.88rem;padding:.9rem 2rem;transition:transform .2s cubic-bezier(.34,1.56,.64,1);overflow:hidden}
+    .btn-forest{background:var(--forest);color:white;box-shadow:0 4px 24px var(--fglow)}
+    .btn-forest::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(255,255,255,.15),transparent);opacity:0;transition:opacity .3s}
+    .btn-forest:hover::before{opacity:1}
+    .btn-forest:hover{box-shadow:0 0 0 10px var(--fglow),0 8px 32px var(--fglow)}
+    .btn-ghost-w{background:transparent;color:rgba(255,255,255,.65);border:1px solid rgba(255,255,255,.2)}
+    .btn-ghost-w:hover{color:white;border-color:rgba(255,255,255,.5)}
+    .barr{transition:transform .3s cubic-bezier(.34,1.56,.64,1)}
+    .btn-mag:hover .barr{transform:translateX(4px)}
+
+    .hero-since{display:flex;align-items:center;gap:1rem;padding-top:2rem;border-top:1px solid rgba(255,255,255,.08);opacity:0;animation:rUp .8s ease forwards .72s}
+    .since-num{font-family:'DM Serif Display',serif;font-size:3rem;font-weight:400;color:#D4A044;line-height:1;letter-spacing:-.02em}
+    .since-text{font-size:.84rem;color:rgba(255,255,255,.45);font-weight:300;line-height:1.6}
+    .since-text strong{color:rgba(255,255,255,.8);font-weight:500}
+
+    /* HERO RIGHT */
+    .hero-right{position:relative;z-index:2;display:flex;flex-direction:column;justify-content:flex-end;padding:3rem;gap:1rem;opacity:0;animation:rFade 1s ease forwards .65s}
+    .hero-deco{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-family:'DM Serif Display',serif;font-size:20rem;font-style:italic;color:rgba(255,255,255,.04);line-height:1;user-select:none;pointer-events:none}
+    .hq-card{background:white;border-radius:18px;padding:1.8rem;box-shadow:0 24px 64px rgba(0,0,0,.3);border-left:3px solid var(--forest);animation:flt1 7s ease-in-out infinite}
+    @keyframes flt1{0%,100%{transform:translateY(0) rotate(-.5deg)}50%{transform:translateY(-10px) rotate(-.5deg)}}
+    .hqt{font-family:'DM Serif Display',serif;font-size:.95rem;color:var(--ink);line-height:1.65;margin-bottom:.75rem}
+    .hqa{font-size:.7rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--forest)}
+    .hero-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(255,255,255,.12);border-radius:14px;overflow:hidden;animation:flt2 8s ease-in-out infinite;animation-delay:-3s}
+    @keyframes flt2{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}
+    .hstat{background:rgba(14,32,24,.7);backdrop-filter:blur(12px);padding:1.2rem;text-align:center}
+    .hstat-num{font-family:'DM Serif Display',serif;font-size:1.6rem;color:white;line-height:1;margin-bottom:.2rem}
+    .hstat-label{font-size:.66rem;color:rgba(255,255,255,.42);letter-spacing:.04em;line-height:1.3}
+
+    /* MARQUEE */
+    .marquee{background:var(--forest);padding:.9rem 0;overflow:hidden}
+    .mtrack{display:flex;animation:mscroll 24s linear infinite;white-space:nowrap}
+    .mitem{display:inline-flex;align-items:center;gap:1rem;padding:0 2.5rem;font-size:.75rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:white;flex-shrink:0}
+    .mdot{width:4px;height:4px;border-radius:50%;background:rgba(255,255,255,.4)}
+    @keyframes mscroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+
+    /* TRUST BAR */
+    .trust-bar{background:white;border-bottom:1px solid var(--border);padding:1rem 6%;display:flex;align-items:center;justify-content:center;gap:2.5rem;flex-wrap:wrap}
+    .ti{display:flex;align-items:center;gap:.55rem;font-size:.8rem;color:var(--mid)}
+    .tck{width:18px;height:18px;background:rgba(38,80,68,.1);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+
+    /* SECTIONS */
+    section{padding:110px 6%}
+    .si{max-width:1140px;margin:0 auto}
+    .ey{display:inline-flex;align-items:center;gap:.7rem;font-size:.7rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:#B8832A;margin-bottom:1rem}
+    .ey-line{width:22px;height:1px;background:#B8832A}
+    h2{font-family:'DM Serif Display',serif;font-size:clamp(2.2rem,3.5vw,3.2rem);font-weight:400;line-height:1.15;color:var(--ink);margin-bottom:1.2rem}
+    h2 em{font-style:italic;color:#B8832A}
+    .lead{font-size:1rem;font-weight:300;color:var(--mid);line-height:1.85;max-width:520px}
+
+    /* REVEAL */
+    .rv{opacity:0;transform:translateY(28px);transition:opacity .8s ease,transform .8s cubic-bezier(.16,1,.3,1)}
+    .rv.vis{opacity:1;transform:translateY(0)}
+    .rv.d1{transition-delay:.1s}.rv.d2{transition-delay:.2s}.rv.d3{transition-delay:.3s}.rv.d4{transition-delay:.4s}
+
+    /* SERVICES */
+    .sb{background:var(--warm)}
+    .sh{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:end;margin-bottom:3.5rem}
+    .sg{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+    .sc{background:white;border-radius:18px;padding:2rem;border:1px solid var(--border);transition:transform .35s cubic-bezier(.34,1.56,.64,1),box-shadow .3s,border-color .3s;position:relative;overflow:hidden}
+    .sc::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--forest),transparent);opacity:0;transition:opacity .3s}
+    .sc:hover{transform:translateY(-7px);box-shadow:0 20px 48px var(--shadow);border-color:rgba(38,80,68,.35)}
+    .sc:hover::before{opacity:1}
+    .sc.feat{background:linear-gradient(145deg,#1A3830 0%,#0E2018 100%);border-color:transparent;grid-column:1/-1;display:grid;grid-template-columns:1fr auto;align-items:center;gap:2.5rem;padding:2.2rem 2.8rem}
+    .sc.feat:hover{transform:translateY(-3px)}
+    .snum{font-family:'DM Serif Display',serif;font-size:2.8rem;color:rgba(38,80,68,.15);line-height:1;margin-bottom:.8rem}
+    .sc.feat .snum{color:rgba(255,255,255,.1)}
+    .sc h3{font-family:'DM Serif Display',serif;font-size:1.2rem;color:var(--ink);margin-bottom:.6rem}
+    .sc.feat h3{color:white;font-size:1.5rem}
+    .sc p{font-size:.88rem;font-weight:300;color:var(--mid);line-height:1.78}
+    .sc.feat p{color:rgba(255,255,255,.55)}
+    .stag{display:inline-block;margin-top:.9rem;font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:var(--forest);font-weight:600}
+    .sc.feat .stag{color:rgba(255,255,255,.4)}
+    .feat-badge{display:inline-block;background:var(--forest);color:white;font-size:.68rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:.25rem .75rem;border-radius:100px;margin-bottom:.8rem}
+    .feat-stat{text-align:center;background:rgba(255,255,255,.07);border-radius:14px;padding:1.8rem 2rem;border:1px solid rgba(255,255,255,.08);flex-shrink:0}
+    .feat-stat-num{font-family:'DM Serif Display',serif;font-size:3rem;color:rgba(255,255,255,.85);line-height:1;margin-bottom:.3rem}
+    .feat-stat-label{font-size:.72rem;color:rgba(255,255,255,.38);letter-spacing:.05em;line-height:1.5}
+
+    /* TESTIMONIALS */
+    .tb{background:var(--ink)}
+    .th{text-align:center;margin-bottom:3.5rem}
+    .th h2{color:white}
+    .th h2 em{color:var(--fmid)}
+    .th .lead{color:rgba(255,255,255,.42);margin:0 auto}
+    .tgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+    .tc{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);border-radius:18px;padding:1.8rem;transition:background .2s,border-color .2s,transform .35s cubic-bezier(.34,1.56,.64,1)}
+    .tc:hover{background:rgba(255,255,255,.07);border-color:rgba(38,80,68,.45);transform:translateY(-5px)}
+    .tc.feat{grid-column:1/-1;background:rgba(38,80,68,.14);border-color:rgba(38,80,68,.3);display:grid;grid-template-columns:1fr auto;gap:2.5rem;align-items:center}
+    .tc.feat:hover{background:rgba(38,80,68,.19)}
+    .tstars{color:#F5A623;font-size:.78rem;letter-spacing:.1em;margin-bottom:.9rem}
+    .ttext{font-family:'DM Serif Display',serif;font-size:1rem;color:rgba(255,255,255,.82);line-height:1.75;margin-bottom:1.1rem}
+    .tc.feat .ttext{font-size:1.2rem}
+    .tauth{display:flex;align-items:center;gap:.75rem}
+    .tavat{width:40px;height:40px;border-radius:50%;background:rgba(38,80,68,.3);display:flex;align-items:center;justify-content:center;font-family:'DM Sans',sans-serif;font-size:.62rem;font-weight:600;color:var(--fmid);flex-shrink:0;letter-spacing:.02em}
+    .tname{font-size:.73rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:rgba(255,255,255,.38)}
+    .tstat{text-align:center;padding:1.5rem 2rem;border-left:1px solid rgba(38,80,68,.3);flex-shrink:0}
+    .tstat-num{font-family:'DM Serif Display',serif;font-size:3.5rem;color:#D4A044;line-height:1;letter-spacing:-.02em}
+    .tstat-label{font-size:.7rem;color:rgba(255,255,255,.35);letter-spacing:.06em;text-transform:uppercase;margin-top:.4rem;line-height:1.5}
+
+    /* ABOUT */
+    .ab{background:var(--cream);position:relative;overflow:hidden}
+    .ab::before{content:'';position:absolute;top:-200px;right:-200px;width:600px;height:600px;background:radial-gradient(circle,rgba(38,80,68,.08) 0%,transparent 65%);pointer-events:none}
+    .agrid{display:grid;grid-template-columns:1fr 1fr;gap:6rem;align-items:center}
+    .aimg-main{width:100%;aspect-ratio:4/5;background:linear-gradient(155deg,var(--warm2) 0%,#bbb5a8 100%);border-radius:18px;display:flex;align-items:center;justify-content:center;overflow:hidden;position:relative}
+    .aimg-deco{font-family:'DM Serif Display',serif;font-size:14rem;font-style:italic;color:rgba(255,255,255,.12);line-height:1;user-select:none}
+    .aimg-label{position:absolute;bottom:1.5rem;left:1.5rem;background:rgba(38,80,68,.75);backdrop-filter:blur(8px);color:rgba(255,255,255,.75);font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;padding:.4rem .8rem;border-radius:6px}
+    .abadge{position:absolute;top:-1.2rem;right:-1.2rem;background:#B8832A;color:white;border-radius:50%;width:104px;height:104px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;box-shadow:0 8px 32px rgba(184,131,42,.35)}
+    .abadge-num{font-family:'DM Serif Display',serif;font-size:1.9rem;line-height:1}
+    .abadge-label{font-size:.6rem;letter-spacing:.06em;text-transform:uppercase;opacity:.75;margin-top:.15rem}
+    .adr{background:linear-gradient(145deg,rgba(38,80,68,.08),rgba(38,80,68,.04));border-radius:14px;padding:1.5rem;border:1px solid rgba(38,80,68,.15);margin-bottom:1.8rem;display:flex;gap:1rem;align-items:flex-start}
+    .adr-av{width:54px;height:54px;border-radius:50%;background:var(--forest);display:flex;align-items:center;justify-content:center;font-family:'DM Sans',sans-serif;font-size:.72rem;font-weight:600;color:white;flex-shrink:0;letter-spacing:.02em}
+    .adr-name{font-family:'DM Serif Display',serif;font-size:1rem;color:var(--ink);margin-bottom:.2rem}
+    .adr-role{font-size:.7rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--forest);margin-bottom:.5rem}
+    .adr-bio{font-size:.82rem;font-weight:300;color:var(--mid);line-height:1.68}
+    .alist{list-style:none;display:flex;flex-direction:column;gap:.8rem;margin-bottom:1.8rem}
+    .alist li{display:flex;align-items:flex-start;gap:.75rem;font-size:.9rem;color:var(--mid);font-weight:300}
+    .alist-dot{width:6px;height:6px;border-radius:50%;background:var(--forest);flex-shrink:0;margin-top:.5rem}
+    .hours-box{background:white;border-radius:14px;overflow:hidden;border:1px solid var(--border)}
+    .hours-hdr{background:var(--forest2);color:rgba(255,255,255,.65);padding:.75rem 1.25rem;font-size:.7rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase}
+    .hrow{display:flex;justify-content:space-between;padding:.65rem 1.25rem;border-bottom:1px solid var(--border);font-size:.85rem}
+    .hrow:last-child{border-bottom:none}
+    .hday{font-weight:600;color:var(--ink)}
+    .htime{color:var(--mid);font-weight:300}
+
+    /* TEAM */
+    .team-bg{background:white}
+    .team-hdr{text-align:center;margin-bottom:3.5rem}
+    .tgrd{display:grid;grid-template-columns:repeat(4,1fr);gap:1.2rem}
+    .tcard{background:linear-gradient(145deg,var(--cream) 0%,var(--warm) 100%);border-radius:18px;padding:1.5rem;border:1px solid var(--border);text-align:center;transition:transform .35s cubic-bezier(.34,1.56,.64,1),box-shadow .3s,border-color .3s}
+    .tcard:hover{transform:translateY(-6px);box-shadow:0 20px 48px var(--shadow);border-color:rgba(38,80,68,.3)}
+    .tcard.principal{grid-column:1/-1;text-align:left;display:flex;gap:1.5rem;align-items:flex-start;background:linear-gradient(145deg,rgba(38,80,68,.08),rgba(38,80,68,.04));border-color:rgba(38,80,68,.2)}
+    .tphoto{width:54px;height:54px;border-radius:50%;background:rgba(38,80,68,.12);display:flex;align-items:center;justify-content:center;font-family:'DM Sans',sans-serif;font-size:.65rem;font-weight:600;color:var(--forest);flex-shrink:0;letter-spacing:.02em;border:2px solid rgba(38,80,68,.18)}
+    .tcard.principal .tphoto{width:70px;height:70px;font-size:.75rem;background:var(--forest);color:white;border-color:transparent;margin:0}
+    .tcard-name{font-family:'DM Serif Display',serif;font-size:.95rem;color:var(--ink);margin-bottom:.2rem;line-height:1.2}
+    .tcard.principal .tcard-name{font-size:1.1rem}
+    .trole{font-size:.66rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--forest);margin-bottom:.4rem}
+    .tgdc{font-size:.67rem;color:var(--mid);font-weight:300;margin-bottom:.5rem}
+    .tbio{font-size:.8rem;font-weight:300;color:var(--mid);line-height:1.68}
+    .tnote{text-align:center;margin-top:2rem;padding:1.4rem 2rem;background:linear-gradient(135deg,rgba(38,80,68,.08),rgba(139,115,85,.06));border-radius:12px;font-size:.87rem;color:var(--forest);border:1px solid rgba(38,80,68,.15);line-height:1.7}
+
+    /* FEES */
+    .fees-bg{background:var(--warm);background-image:radial-gradient(circle,rgba(38,80,68,.04) 1px,transparent 1px);background-size:28px 28px}
+    .fi{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:end;margin-bottom:3rem}
+    .fgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+    .fcard{background:white;border-radius:18px;padding:2rem;border:1.5px solid var(--border);transition:transform .35s cubic-bezier(.34,1.56,.64,1),box-shadow .3s,border-color .3s}
+    .fcard:hover{transform:translateY(-5px);box-shadow:0 16px 40px var(--shadow);border-color:var(--forest)}
+    .fcard.feat{background:var(--forest2);border-color:var(--forest2);border-top:3px solid #B8832A}
+    .fcard.feat:hover{border-color:var(--fmid)}
+    .ftype{font-size:.68rem;letter-spacing:.15em;text-transform:uppercase;color:var(--mid);margin-bottom:.4rem;font-weight:600}
+    .fcard.feat .ftype{color:rgba(255,255,255,.35)}
+    .fname{font-family:'DM Serif Display',serif;font-size:1.25rem;color:var(--ink);margin-bottom:1.2rem;padding-bottom:1rem;border-bottom:1px solid var(--border)}
+    .fcard.feat .fname{color:white;border-color:rgba(255,255,255,.08)}
+    .fitems{list-style:none;display:flex;flex-direction:column;gap:.45rem;margin-bottom:1.2rem}
+    .fitem{display:flex;justify-content:space-between;font-size:.85rem;padding:.4rem 0;border-bottom:1px solid var(--border);color:var(--mid)}
+    .fcard.feat .fitem{border-color:rgba(255,255,255,.07);color:rgba(255,255,255,.55)}
+    .fn{font-weight:400}
+    .fp{font-weight:600;color:var(--ink)}
+    .fcard.feat .fp{color:var(--fmid)}
+    .fnote{font-size:.78rem;color:var(--mid);font-style:italic;font-weight:300}
+    .fcard.feat .fnote{color:rgba(255,255,255,.3)}
+    .feat-fee-note{margin-top:1rem;padding:.8rem 1rem;background:rgba(255,255,255,.06);border-radius:8px;font-size:.82rem;color:rgba(255,255,255,.8);font-weight:400;border-top:1px solid rgba(255,255,255,.1);padding-top:1rem}
+
+    /* CONTACT */
+    .cb{background:var(--forest2);background-image:radial-gradient(ellipse at 80% 20%,rgba(53,115,101,.2) 0%,transparent 55%)}
+    .cgrid{display:grid;grid-template-columns:1fr 1fr;gap:5rem}
+    .ch{color:white}
+    .ch em{font-style:italic;color:rgba(255,255,255,.45)}
+    .cey{color:rgba(255,255,255,.5)!important}
+    .cey .ey-line{background:var(--fmid)}
+    .cform{display:flex;flex-direction:column;gap:1rem;margin-top:2rem}
+    .frow{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+    .fg{display:flex;flex-direction:column;gap:.38rem}
+    .fl{font-size:.68rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.32)}
+    .finp{background:rgba(255,255,255,.06);border:1.5px solid rgba(255,255,255,.1);border-radius:10px;padding:.85rem 1rem;font-family:'DM Sans',sans-serif;font-size:.9rem;color:white;outline:none;transition:border-color .2s,background .2s,box-shadow .2s;width:100%}
+    .finp::placeholder{color:rgba(255,255,255,.22)}
+    .finp:focus{border-color:var(--fmid);background:rgba(255,255,255,.09);box-shadow:0 0 0 4px var(--fglow)}
+    textarea.finp{resize:vertical;min-height:120px}
+    .fsub{background:var(--forest);color:white;border:none;padding:.95rem 2rem;border-radius:100px;font-family:'DM Sans',sans-serif;font-size:.92rem;font-weight:600;transition:transform .2s cubic-bezier(.34,1.56,.64,1),box-shadow .2s;align-self:flex-start;box-shadow:0 4px 20px var(--fglow)}
+    .fsub:hover{transform:translateY(-3px) scale(1.02);box-shadow:0 8px 32px var(--fglow)}
+    .cinfo h3{font-family:'DM Serif Display',serif;font-size:1.4rem;color:white;margin-bottom:1.8rem}
+    .cdet{display:flex;gap:1rem;margin-bottom:1.1rem;align-items:flex-start}
+    .cicon{width:36px;height:36px;background:rgba(255,255,255,.06);border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0;border:1px solid rgba(255,255,255,.08)}
+    .cdt strong{display:block;font-size:.68rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.32);margin-bottom:.15rem}
+    .cdt span{font-size:.9rem;color:rgba(255,255,255,.68);font-weight:300}
+    .ebox{margin-top:1.8rem;background:rgba(255,255,255,.05);border-left:3px solid var(--fmid);padding:1.1rem 1.4rem;border-radius:0 8px 8px 0}
+    .ebox h4{font-size:.76rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--fmid);margin-bottom:.4rem}
+    .ebox p{font-size:.82rem;color:rgba(255,255,255,.42);font-weight:300;line-height:1.68}
+    .ebox strong{color:rgba(255,255,255,.72);font-weight:500}
+
+    /* FOOTER */
+    footer{background:#0A120E;padding:2rem 6%;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;border-top:1px solid rgba(255,255,255,.04)}
+    .fl-left{display:flex;flex-direction:column;gap:.3rem}
+    .flogo{font-family:'DM Serif Display',serif;font-size:1rem;color:rgba(255,255,255,.38);text-decoration:none}
+    .fcontact{font-size:.74rem;color:rgba(255,255,255,.22)}
+    .fcontact a{color:rgba(255,255,255,.32);text-decoration:none;transition:color .2s}
+    .fcontact a:hover{color:rgba(255,255,255,.6)}
+    footer p{font-size:.74rem;color:rgba(255,255,255,.18);text-align:center}
+    .fr{display:flex;gap:1.5rem;align-items:center}
+    .flinks{display:flex;gap:1.5rem}
+    .flinks a{font-size:.74rem;color:rgba(255,255,255,.22);text-decoration:none;transition:color .2s}
+    .flinks a:hover{color:rgba(255,255,255,.5)}
+    .ftop{font-size:.74rem;color:rgba(255,255,255,.22);text-decoration:none;transition:color .2s}
+    .ftop:hover{color:rgba(255,255,255,.5)}
+
+    @keyframes rUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+    @keyframes rFade{from{opacity:0}to{opacity:1}}
+
+    @media(max-width:1024px){nav ul li:not(:last-child){display:none}}
+    @media(max-width:900px){
+      .hero{grid-template-columns:1fr}
+      .hero-right{display:none}
+      .hero-left{padding:70px 6%}
+      .sh{grid-template-columns:1fr;gap:1.5rem}
+      .sg{grid-template-columns:1fr 1fr}
+      .sc.feat{grid-template-columns:1fr}
+      .tgrid{grid-template-columns:1fr}
+      .tc.feat{grid-template-columns:1fr}
+      .agrid{grid-template-columns:1fr}
+      .fi{grid-template-columns:1fr;gap:1.5rem}
+      .fgrid{grid-template-columns:1fr}
+      .tgrd{grid-template-columns:1fr 1fr}
+      .tcard.principal{grid-column:1/-1}
+      .cgrid{grid-template-columns:1fr}
+      nav ul{display:none}
+    }
+    @media(max-width:480px){
+      section{padding:70px 5%}
+      nav{padding:0 5%}
+      .hero-left{padding:50px 5%}
+      .frow{grid-template-columns:1fr}
+      .sg{grid-template-columns:1fr}
+      .tgrd{grid-template-columns:1fr}
+    }
+  </style>
+</head>
+<body>
+
+<div class="sprog" id="sprog"></div>
+
+<!-- TOP BAR -->
+<div class="top-bar">
+  <div class="top-bar-left">
+    <div class="top-bar-item">
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.5)" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.8 19.79 19.79 0 01.18 1.18 2 2 0 012.18 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.09a16 16 0 006 6l.56-.56a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+      <a href="tel:01159282233">0115 928 2233</a>
+    </div>
+    <div class="top-bar-div"></div>
+    <div class="top-bar-item">
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.5)" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+      206 Wollaton Road, Nottingham, NG8 1HQ
+    </div>
+    <div class="top-bar-div"></div>
+    <div class="top-bar-item">Family-run since 2010</div>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav id="nav">
+  <a href="#" class="nav-logo">
+    <span class="nav-logo-name">Wollaton Road Dental</span>
+    <span class="nav-logo-sub">Wollaton · Nottingham NG8</span>
+  </a>
+  <ul>
+    <li><a href="#services">Treatments</a></li>
+    <li><a href="#team">Team</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#fees">Fees</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a href="#contact" class="nav-book">Book appointment</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg">
+    <div class="orb orb1"></div>
+    <div class="orb orb2"></div>
+  </div>
+  <div class="hero-grid-ol"></div>
+  <div class="hero-left">
+    <div class="hero-ey"><div class="hero-ey-line"></div>Family dentistry · Wollaton, Nottingham NG8</div>
+    <div class="hero-practice-name">Wollaton Road Dental Practice</div>
+    <h1>Where nervous patients become <em>happy regulars.</em></h1>
+    <p class="hero-sub">Family-run and patient-focused since 2010. Led by Dr Gurvinder Singh Thiara — offering general, cosmetic, and microscope-enhanced dentistry in Wollaton.</p>
+    <div class="hero-btns">
+      <a href="#contact" class="btn-mag btn-forest">Book an appointment <span class="barr">→</span></a>
+      <a href="#services" class="btn-mag btn-ghost-w">Our treatments</a>
+    </div>
+    <div class="hero-since">
+      <div class="since-num">1978</div>
+      <div class="since-text"><strong>Patients since 1978.</strong> Some of our patients have been coming before Dr Thiara took over. That kind of loyalty doesn't happen by accident.</div>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="hero-deco">W</div>
+    <div class="hq-card">
+      <div class="hqt">"I can honestly say I have never before experienced such empathy and gentleness as I have with you and your team. This has really built up my confidence with my dental treatment."</div>
+      <div class="hqa">Mrs NA — Patient</div>
+    </div>
+    <div class="hero-stats">
+      <div class="hstat"><div class="hstat-num">2010</div><div class="hstat-label">Family-run since</div></div>
+      <div class="hstat"><div class="hstat-num">MSc</div><div class="hstat-label">Endodontics — Dr Thiara</div></div>
+      <div class="hstat"><div class="hstat-num">BDA</div><div class="hstat-label">Member practice</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee">
+  <div class="mtrack">
+    <div class="mitem">GDC Registered <div class="mdot"></div></div>
+    <div class="mitem">CQC Regulated <div class="mdot"></div></div>
+    <div class="mitem">Microscope Enhanced Dentistry <div class="mdot"></div></div>
+    <div class="mitem">Six Month Smiles Provider <div class="mdot"></div></div>
+    <div class="mitem">Family-run Since 2010 <div class="mdot"></div></div>
+    <div class="mitem">New Patients Welcome <div class="mdot"></div></div>
+    <div class="mitem">Harley Street Trained <div class="mdot"></div></div>
+    <div class="mitem">GDC Registered <div class="mdot"></div></div>
+    <div class="mitem">CQC Regulated <div class="mdot"></div></div>
+    <div class="mitem">Microscope Enhanced Dentistry <div class="mdot"></div></div>
+    <div class="mitem">Six Month Smiles Provider <div class="mdot"></div></div>
+    <div class="mitem">Family-run Since 2010 <div class="mdot"></div></div>
+    <div class="mitem">New Patients Welcome <div class="mdot"></div></div>
+    <div class="mitem">Harley Street Trained <div class="mdot"></div></div>
+  </div>
+</div>
+
+<!-- TRUST BAR -->
+<div class="trust-bar">
+  <div class="ti"><div class="tck"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#265044" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>GDC Registered</div>
+  <div class="ti"><div class="tck"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#265044" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>CQC Regulated</div>
+  <div class="ti"><div class="tck"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#265044" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>Microscope Enhanced Dentistry</div>
+  <div class="ti"><div class="tck"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#265044" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>Six Month Smiles Provider</div>
+  <div class="ti"><div class="tck"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#265044" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>Family-run Since 2010</div>
+</div>
+
+<!-- SERVICES -->
+<section class="sb" id="services">
+  <div class="si">
+    <div class="sh rv">
+      <div><div class="ey"><div class="ey-line"></div>Treatments</div><h2>Modern dentistry, <em>personal care</em></h2></div>
+      <p class="lead">From routine check-ups to specialist treatments you won't find at most Nottingham practices — all under one roof.</p>
+    </div>
+    <div class="sg">
+      <div class="sc feat rv">
+        <div>
+          <div class="feat-badge">Rare in Nottingham</div>
+          <div class="snum">01</div>
+          <h3>Microscope Enhanced Dentistry</h3>
+          <p>One of very few practices in Nottingham to offer treatment under surgical microscope — giving Dr Thiara extraordinary precision for root canals, crowns, and complex restorations. Referrals from other practices accepted.</p>
+          <span class="stag">Specialist referrals welcome</span>
+        </div>
+        <div class="feat-stat">
+          <div class="feat-stat-num">×10</div>
+          <div class="feat-stat-label">Magnification for precision treatment</div>
+        </div>
+      </div>
+      <div class="sc rv d1">
+        <div class="snum">02</div>
+        <h3>Family Dentistry</h3>
+        <p>General care for all ages — examinations, fillings, extractions, and preventive advice. Nervous patients especially welcome. We take the time that other practices don't.</p>
+        <span class="stag">All ages welcome</span>
+      </div>
+      <div class="sc rv d2">
+        <div class="snum">03</div>
+        <h3>Teeth Whitening</h3>
+        <p>Professional whitening that produces results far beyond anything shop-bought. Take-home trays fitted to your teeth — results visible within two weeks.</p>
+        <span class="stag">Results in 2 weeks</span>
+      </div>
+      <div class="sc rv d1">
+        <div class="snum">04</div>
+        <h3>Six Month Smiles</h3>
+        <p>Discreet orthodontic treatment focused on the teeth that show when you smile. Accredited provider — most patients see results in just 6 months.</p>
+        <span class="stag">Accredited provider</span>
+      </div>
+      <div class="sc rv d2">
+        <div class="snum">05</div>
+        <h3>Cosmetic Dentistry</h3>
+        <p>Veneers, crowns, bridges, and composite bonding — all tailored to complement your natural smile. Harley Street-trained expertise available locally.</p>
+        <span class="stag">Personalised to you</span>
+      </div>
+      <div class="sc rv d3">
+        <div class="snum">06</div>
+        <h3>Hygiene & Prevention</h3>
+        <p>Kirsty Woolley, our dedicated Hygiene Therapist, specialises in preventive care and works with patients to maintain a healthy mouth between visits.</p>
+        <span class="stag">Dedicated hygienist</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="tb">
+  <div class="si">
+    <div class="th rv">
+      <div class="ey" style="justify-content:center"><div class="ey-line"></div>Patient reviews</div>
+      <h2>Words that stay <em>with us</em></h2>
+      <p class="lead">These testimonials arrived as handwritten letters. The kind that get pinned up in the surgery.</p>
+    </div>
+    <div class="tgrid">
+      <div class="tc feat rv">
+        <div>
+          <div class="tstars">★★★★★</div>
+          <p class="ttext">"I can honestly say I have never before experienced such empathy and gentleness as I have with you and your team. This has really built up my confidence with my dental treatment and I can't thank you enough. Please don't ever change because you're all wonderful."</p>
+          <div class="tauth"><div class="tavat">NA</div><div class="tname">Mrs NA — Patient</div></div>
+        </div>
+        <div class="tstat">
+          <div class="tstat-num">1978</div>
+          <div class="tstat-label">Year our longest-standing patient first visited</div>
+        </div>
+      </div>
+      <div class="tc rv d1">
+        <div class="tstars">★★★★★</div>
+        <p class="ttext">"I have been a patient at the practice since 1978. I now feel much more comfortable about having dental procedures undertaken."</p>
+        <div class="tauth"><div class="tavat">JT</div><div class="tname">Mr JRT — Patient since 1978</div></div>
+      </div>
+      <div class="tc rv d2">
+        <div class="tstars">★★★★★</div>
+        <p class="ttext">"Just a quick thank you from me and my daughter — everyone was so lovely, from the receptionist who gave her a passport so she won't miss her appointments, to yourself offering her favourite stickers."</p>
+        <div class="tauth"><div class="tavat">NM</div><div class="tname">Miss NM — Patient</div></div>
+      </div>
+      <div class="tc rv d1">
+        <div class="tstars">★★★★★</div>
+        <p class="ttext">"The world's a better place because of people like you!"</p>
+        <div class="tauth"><div class="tavat">CF</div><div class="tname">Mrs CF — Patient</div></div>
+      </div>
+      <div class="tc rv d2">
+        <div class="tstars">★★★★★</div>
+        <p class="ttext">"Thank you so much for the veneers — had the brightest smile at my nephew's wedding!"</p>
+        <div class="tauth"><div class="tavat">RK</div><div class="tname">RMK — Patient</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="ab" id="about">
+  <div class="si">
+    <div class="agrid">
+      <div class="aimg rv" style="position:relative">
+        <div class="aimg-main">
+          <div class="aimg-deco">W</div>
+          <div class="aimg-label">Practice photography coming soon</div>
+        </div>
+        <div class="abadge"><div class="abadge-num">2010</div><div class="abadge-label">Family-run since</div></div>
+      </div>
+      <div class="rv d2">
+        <div class="ey"><div class="ey-line"></div>About the practice</div>
+        <h2>A family-run practice with <em>real heart</em></h2>
+        <p class="lead" style="margin-bottom:1.8rem">Dr Gurvinder Singh Thiara and his wife Winny took over Wollaton Road in 2010. His calm, careful approach has converted many nervous patients into confident regulars — some of whom have been coming since 1978.</p>
+        <div class="adr">
+          <div class="adr-av">GT</div>
+          <div>
+            <div class="adr-name">Dr Gurvinder Singh Thiara</div>
+            <div class="adr-role">Principal Dentist — BDS, PG Cert (Endo)</div>
+            <div class="adr-bio">Qualified from the University of Birmingham in 2005. Completed a year-long residency at a Harley Street clinic with specialist prosthodontist Dr Marc Hamburger. Currently completing his MSc in Endodontics at the University of Warwick. GDC: 85557</div>
+          </div>
+        </div>
+        <ul class="alist">
+          <li><div class="alist-dot"></div>Harley Street-trained — that level of expertise is now available in Wollaton</li>
+          <li><div class="alist-dot"></div>Microscope Enhanced Dentistry for precision treatments rare in Nottingham</li>
+          <li><div class="alist-dot"></div>Six Month Smiles accredited orthodontic provider</li>
+          <li><div class="alist-dot"></div>Specialist in helping nervous and anxious patients feel at ease</li>
+        </ul>
+        <div class="hours-box">
+          <div class="hours-hdr">Opening Hours</div>
+          <div class="hrow"><span class="hday">Monday – Friday</span><span class="htime">Call to confirm</span></div>
+          <div class="hrow"><span class="hday">Weekend</span><span class="htime">Closed</span></div>
+          <div style="padding:.7rem 1.25rem;font-size:.78rem;color:var(--mid);font-weight:300;font-style:italic">Call 0115 928 2233 for current opening times.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TEAM -->
+<section class="team-bg" id="team">
+  <div class="si">
+    <div class="team-hdr rv">
+      <div class="ey" style="justify-content:center"><div class="ey-line"></div>The team</div>
+      <h2>Small team, <em>exceptional</em> care</h2>
+      <p class="lead" style="margin:0 auto">A tight-knit, experienced team dedicated to making every visit as comfortable as possible.</p>
+    </div>
+    <div class="tgrd">
+      <div class="tcard principal rv">
+        <div class="tphoto">GT</div>
+        <div>
+          <div class="tcard-name">Dr Gurvinder Singh Thiara</div>
+          <div class="trole">Principal Dentist — BDS, PG Cert (Endo)</div>
+          <div class="tgdc">GDC: 85557 · University of Birmingham, 2005</div>
+          <div class="tbio">Harley Street trained. Currently completing MSc in Endodontics at Warwick. His calm, caring nature has won the trust of patients across Nottingham for over a decade.</div>
+        </div>
+      </div>
+      <div class="tcard rv d1">
+        <div class="tphoto">WT</div>
+        <div class="tcard-name">Mrs Winny Thiara</div>
+        <div class="trole">Practice Manager</div>
+        <div class="tgdc">BSc Psychology · MSc Health Psychology</div>
+        <div class="tbio">Co-owner and the organisational heart of the practice. Winny ensures every patient experience runs smoothly from first call to final appointment.</div>
+      </div>
+      <div class="tcard rv d2">
+        <div class="tphoto">KW</div>
+        <div class="tcard-name">Kirsty Woolley</div>
+        <div class="trole">Hygiene Therapist</div>
+        <div class="tgdc">GDC: 175710</div>
+        <div class="tbio">Specialises in preventive care and oral health education. Particularly skilled with patients who need a gentle, unhurried approach to hygiene appointments.</div>
+      </div>
+      <div class="tcard rv d3">
+        <div class="tphoto">DB</div>
+        <div class="tcard-name">Davina Brandy</div>
+        <div class="trole">Dental Nurse</div>
+        <div class="tgdc">GDC: 149568</div>
+        <div class="tbio">An experienced and reassuring presence in surgery — the kind of nurse who puts patients at ease before the dentist even walks in.</div>
+      </div>
+      <div class="tcard rv d4">
+        <div class="tphoto">SV</div>
+        <div class="tcard-name">Sarah Vann</div>
+        <div class="trole">Receptionist</div>
+        <div class="tgdc">Your first point of contact</div>
+        <div class="tbio">The first voice you hear and the first face you see. Sarah makes sure every patient feels welcome from the moment they arrive.</div>
+      </div>
+    </div>
+    <div class="tnote rv">Dr Thiara trained at Harley Street under a specialist prosthodontist and is currently completing a Masters in Endodontics. That level of postgraduate commitment — at a local Nottingham practice — is what makes Wollaton Road genuinely different.</div>
+  </div>
+</section>
+
+<!-- FEES -->
+<section class="fees-bg" id="fees">
+  <div class="si">
+    <div class="fi rv">
+      <div><div class="ey"><div class="ey-line"></div>Our fees</div><h2>Clear pricing, <em>no surprises</em></h2></div>
+      <p class="lead">We're a private practice offering high-quality dentistry at fair prices. Your dentist will always confirm costs in writing before any treatment begins.</p>
+    </div>
+    <div class="fgrid">
+      <div class="fcard rv">
+        <div class="ftype">Routine</div>
+        <div class="fname">General Dentistry</div>
+        <ul class="fitems">
+          <li class="fitem"><span class="fn">New patient examination</span><span class="fp">From £60</span></li>
+          <li class="fitem"><span class="fn">Routine examination</span><span class="fp">From £50</span></li>
+          <li class="fitem"><span class="fn">X-rays</span><span class="fp">From £20</span></li>
+          <li class="fitem"><span class="fn">Scale & polish</span><span class="fp">From £65</span></li>
+        </ul>
+        <p class="fnote">All fees confirmed before treatment. Indicative prices only.</p>
+      </div>
+      <div class="fcard feat rv d2">
+        <div class="ftype">Specialist</div>
+        <div class="fname">Microscope Enhanced</div>
+        <ul class="fitems">
+          <li class="fitem"><span class="fn">Consultation</span><span class="fp">From £80</span></li>
+          <li class="fitem"><span class="fn">Root canal (anterior)</span><span class="fp">From £400</span></li>
+          <li class="fitem"><span class="fn">Root canal (molar)</span><span class="fp">From £700</span></li>
+          <li class="fitem"><span class="fn">Complex restoration</span><span class="fp">From £500</span></li>
+        </ul>
+        <div class="feat-fee-note">Harley Street-level precision. Wollaton prices.</div>
+        <p class="fnote" style="margin-top:.6rem">Indicative prices only — confirmed at consultation.</p>
+      </div>
+      <div class="fcard rv d3">
+        <div class="ftype">Cosmetic</div>
+        <div class="fname">Cosmetic Treatments</div>
+        <ul class="fitems">
+          <li class="fitem"><span class="fn">Teeth whitening</span><span class="fp">From £350</span></li>
+          <li class="fitem"><span class="fn">Six Month Smiles</span><span class="fp">From £1,800</span></li>
+          <li class="fitem"><span class="fn">Porcelain veneers</span><span class="fp">From £600</span></li>
+          <li class="fitem"><span class="fn">Ceramic crowns</span><span class="fp">From £600</span></li>
+        </ul>
+        <p class="fnote">Exact costs confirmed at consultation before any commitment.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="cb" id="contact">
+  <div class="si">
+    <div class="cgrid">
+      <div class="rv">
+        <div class="ey cey"><div class="ey-line"></div>Get in touch</div>
+        <h2 class="ch">Book your <em>appointment</em></h2>
+        <form class="cform">
+          <div class="frow">
+            <div class="fg"><label class="fl">First name</label><input type="text" class="finp" placeholder="Jane"></div>
+            <div class="fg"><label class="fl">Last name</label><input type="text" class="finp" placeholder="Smith"></div>
+          </div>
+          <div class="fg"><label class="fl">Email address</label><input type="email" class="finp" placeholder="jane@example.com"></div>
+          <div class="fg"><label class="fl">Phone number</label><input type="tel" class="finp" placeholder="0115 XXX XXXX"></div>
+          <div class="fg"><label class="fl">How can we help?</label><textarea class="finp" placeholder="Tell us what you're looking for — nervous patients are especially welcome."></textarea></div>
+          <button type="submit" class="fsub">Send message →</button>
+        </form>
+      </div>
+      <div class="cinfo rv d2">
+        <h3>Find us in Wollaton</h3>
+        <div class="cdet"><div class="cicon"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.5)" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></div><div class="cdt"><strong>Address</strong><span>206 Wollaton Road, Nottingham, NG8 1HQ</span></div></div>
+        <div class="cdet"><div class="cicon"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.5)" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.8 19.79 19.79 0 01.18 1.18 2 2 0 012.18 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.09a16 16 0 006 6l.56-.56a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg></div><div class="cdt"><strong>Telephone</strong><span>0115 928 2233</span></div></div>
+        <div class="cdet"><div class="cicon"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.5)" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div><div class="cdt"><strong>Opening hours</strong><span>Monday – Friday · Call to confirm current hours</span></div></div>
+        <div class="ebox">
+          <h4>Nervous patients</h4>
+          <p>Dr Thiara has years of experience helping anxious patients feel genuinely comfortable. Please mention it when you get in touch — we'll make sure you're looked after from the moment you arrive.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="fl-left">
+    <a href="#" class="flogo">Wollaton Road Dental Practice</a>
+    <div class="fcontact"><a href="tel:01159282233">0115 928 2233</a> &nbsp;·&nbsp; 206 Wollaton Road, Nottingham NG8 1HQ</div>
+  </div>
+  <p>© 2026 Wollaton Road Dental Practice · GDC Registered · CQC Regulated</p>
+  <p style="font-size:.68rem;color:rgba(255,255,255,.14);text-align:center;margin-top:.3rem">Concept design by <a href="https://claritystudios.uk" style="color:rgba(255,255,255,.22);text-decoration:none">Clarity Studios</a> — claritystudios.uk</p>
+  <div class="fr">
+    <div class="flinks"><a href="#">Privacy Policy</a><a href="#">Complaints</a><a href="#">Accessibility</a></div>
+    <a href="#" class="ftop">Back to top ↑</a>
+  </div>
+</footer>
+
+<script>
+  // SCROLL PROGRESS
+  const sp = document.getElementById('sprog');
+  window.addEventListener('scroll',()=>{sp.style.transform=`scaleX(${window.scrollY/(document.documentElement.scrollHeight-window.innerHeight)})`;},{passive:true});
+
+  // NAV STUCK
+  const nav = document.getElementById('nav');
+  window.addEventListener('scroll',()=>{nav.classList.toggle('stuck',window.scrollY>80);},{passive:true});
+
+  // HERO RIGHT PARALLAX
+  const hr = document.querySelector('.hero-right');
+  window.addEventListener('scroll',()=>{if(hr&&window.innerWidth>900)hr.style.transform=`translateY(${window.scrollY*.15}px)`;},{passive:true});
+
+  // SCROLL REVEAL
+  const obs = new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('vis');});},{threshold:.1,rootMargin:'0px 0px -50px 0px'});
+  document.querySelectorAll('.rv').forEach(el=>obs.observe(el));
+
+  // MAGNETIC BUTTONS
+  document.querySelectorAll('.btn-mag').forEach(btn=>{
+    btn.addEventListener('mousemove',e=>{const r=btn.getBoundingClientRect();btn.style.transform=`translate(${(e.clientX-r.left-r.width/2)*.18}px,${(e.clientY-r.top-r.height/2)*.18}px)`;});
+    btn.addEventListener('mouseleave',()=>{btn.style.transform='';});
+  });
+
+  // 3D TILT
+  document.querySelectorAll('.sc:not(.feat),.tcard:not(.principal),.fcard:not(.feat)').forEach(card=>{
+    card.addEventListener('mousemove',e=>{const r=card.getBoundingClientRect();const x=(e.clientX-r.left)/r.width-.5;const y=(e.clientY-r.top)/r.height-.5;card.style.transform=`perspective(700px) rotateY(${x*8}deg) rotateX(${-y*6}deg) translateY(-7px)`;});
+    card.addEventListener('mouseleave',()=>{card.style.transition='transform .5s cubic-bezier(.34,1.56,.64,1)';card.style.transform='';setTimeout(()=>card.style.transition='',500);});
+  });
+</script>
+</body>
+</html>
